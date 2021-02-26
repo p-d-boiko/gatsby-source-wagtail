@@ -36,7 +36,7 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
             ruleUse.loader.indexOf(`gatsby/dist/utils/babel-loader.js`) >= 0
         ) {
             ruleUse.loader = require.resolve(
-                `gatsby-source-wagtail/babel-loader.js`
+                `@p.boiko/gatsby-source-wagtail/babel-loader.js`
             )
         }
     }
@@ -95,7 +95,7 @@ exports.onPreExtractQueries = async ({ store, actions }, options) => {
         )
         data.__schema.types = filteredData
         fs.writeFile(
-            './node_modules/gatsby-source-wagtail/fragmentTypes.json',
+            './node_modules/@p.boiko/gatsby-source-wagtail/fragmentTypes.json',
             JSON.stringify(data),
             err => {
                 if (err) {
@@ -122,7 +122,7 @@ exports.onPreExtractQueries = async ({ store, actions }, options) => {
 
         // Copy the boilerplate file and replace the placeholder with actual modal name
         fs.readFile(
-            './node_modules/gatsby-source-wagtail/preview.boilerplate.js',
+            './node_modules/@p.boiko/gatsby-source-wagtail/preview.boilerplate.js',
             (err, fileData) => {
                 if (err)
                     return console.error(
@@ -135,7 +135,7 @@ exports.onPreExtractQueries = async ({ store, actions }, options) => {
                     .replace('CustomImage', data.imageType)
                 // Rewrite file so it's accessible
                 fs.writeFile(
-                    `./node_modules/gatsby-source-wagtail/preview.js`,
+                    `./node_modules/@p.boiko/gatsby-source-wagtail/preview.js`,
                     jsFile,
                     err => {
                         if (err)

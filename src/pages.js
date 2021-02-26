@@ -46,7 +46,7 @@ export const createWagtailPages = (
             createPage({
                 path: '/preview',
                 component: path.resolve(
-                    './node_modules/gatsby-source-wagtail/preview-template.js'
+                    './node_modules/@p.boiko/gatsby-source-wagtail/preview-template.js'
                 ),
                 context: { pageMap, fragmentFiles }
             })
