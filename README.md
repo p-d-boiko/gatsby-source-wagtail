@@ -1,5 +1,7 @@
 
-# gatsby-source-wagtail
+# @deployed/gatsby-source-wagtail
+
+> IMPORTANT NOTE: This module is published for the forker's own needs and *WILL BE UNPUBLISHED* when community gets the updated original package. So DO NOT INSTALL it into your business project and DO NOT RELY ON IT
 
 > NOTE: This plugin requires that your Wagtail site use the [Wagtail-Grapple](https://github.com/torchbox/wagtail-grapple)
 library to build a compatible GraphQL endpoint. It does not work without a GraphQL endpoint.
@@ -16,7 +18,7 @@ library to build a compatible GraphQL endpoint. It does not work without a Graph
 
 ### Installation
 
-`npm install gatsby-source-wagtail`
+`npm install @deployed/gatsby-source-wagtail`
 
 ### Configuration
 
@@ -25,7 +27,7 @@ Add the package to your `gatsby-config.js` with the url to your Wagtail GQL endp
 ```js
 ...
 {
-  resolve: "gatsby-source-wagtail",
+  resolve: "@deployed/gatsby-source-wagtail",
   options: {
     url: "http://localhost:8000/graphql"
   },
@@ -52,7 +54,7 @@ The router also adds Wagtail Preview to your Gatsby site automagically! Now poin
 To map a Django model with the `home.BlogPage` ContentType to a template located at `./src/templates/blog.js`
 
 ```js
-const { createWagtailPages } = require("gatsby-source-wagtail/pages.js")
+const { createWagtailPages } = require("@deployed/gatsby-source-wagtail/pages.js")
 
 exports.createPages = ({ graphql, actions }) => {
   return createWagtailPages({
@@ -142,7 +144,7 @@ export const query = graphql`
 
 `gatsby-transformer-sharp` and `gatsby-plugin-sharp` are required for local image processing.
 
-The following fragments work with `gatsby-source-wagtail`:
+The following fragments work with `@deployed/gatsby-source-wagtail`:
 * GatsbyImageSharpFixed
 * GatsbyImageSharpFixed_noBase64
 * GatsbyImageSharpFixed_tracedSVG
