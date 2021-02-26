@@ -175,7 +175,7 @@ exports.createResolvers = (
                     type: `File`,
                     resolve(source, args, context, info) {
                         return createRemoteFileNode({
-                            url: source.src,
+                            url: `https://${source.src}`,
                             store,
                             getCache,
                             createNode,
